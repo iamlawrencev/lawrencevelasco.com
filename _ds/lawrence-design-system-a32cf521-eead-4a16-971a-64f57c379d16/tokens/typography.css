@@ -1,0 +1,16 @@
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url('https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2') format('woff2');}
+:root{
+--font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+--font-mono:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;
+--text-hero-size:clamp(2.75rem,8vw,5rem);--text-hero-lh:1.02;--text-hero-weight:700;--text-hero-tracking:-0.02em;
+--text-page-title-size:clamp(2rem,5vw,2.75rem);--text-page-title-lh:1.08;--text-page-title-weight:700;--text-page-title-tracking:-0.015em;
+--text-section-title-size:clamp(1.375rem,3vw,1.75rem);--text-section-title-lh:1.15;--text-section-title-weight:600;--text-section-title-tracking:-0.01em;
+--text-subheading-size:1.25rem;--text-subheading-lh:1.3;--text-subheading-weight:600;--text-subheading-tracking:0;
+--text-body-lg-size:1.125rem;--text-body-lg-lh:1.55;--text-body-lg-weight:400;
+--text-body-size:1rem;--text-body-lh:1.6;--text-body-weight:400;
+--text-supporting-size:0.9375rem;--text-supporting-lh:1.5;--text-supporting-weight:400;
+--text-label-size:0.875rem;--text-label-lh:1.3;--text-label-weight:600;--text-label-tracking:0.01em;
+--text-meta-size:0.8125rem;--text-meta-lh:1.4;--text-meta-weight:500;--text-meta-tracking:0.01em;
+--text-code-size:0.9rem;--text-code-lh:1.5;--text-code-weight:400;
+--measure-max:70ch;
+}

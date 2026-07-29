@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/lawrence-design-system-a32cf521-eead-4a16-971a-64f57c379d16/tokens/colors.css">
+<link rel="stylesheet" href="_ds/lawrence-design-system-a32cf521-eead-4a16-971a-64f57c379d16/tokens/typography.css">
+<link rel="stylesheet" href="_ds/lawrence-design-system-a32cf521-eead-4a16-971a-64f57c379d16/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/lawrence-design-system-a32cf521-eead-4a16-971a-64f57c379d16/tokens/shape.css">
+<link rel="stylesheet" href="_ds/lawrence-design-system-a32cf521-eead-4a16-971a-64f57c379d16/tokens/motion.css">
+<link rel="stylesheet" href="_ds/lawrence-design-system-a32cf521-eead-4a16-971a-64f57c379d16/tokens/base.css">
+<link rel="stylesheet" href="_ds/lawrence-design-system-a32cf521-eead-4a16-971a-64f57c379d16/styles.css">
+<script src="_ds/lawrence-design-system-a32cf521-eead-4a16-971a-64f57c379d16/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<style>html{scroll-behavior:smooth}</style>
+</helmet>
+<div style="background:var(--color-bg-canvas);min-height:100vh;color:var(--color-text-primary);font-family:var(--font-sans)">
+
+<div style="position:sticky;top:0;z-index:20;pointer-events:none;height:0;overflow:visible;display:flow-root">
+<div aria-hidden="true" style="position:absolute;top:0;left:0;right:0;height:64px;background:linear-gradient(to bottom, var(--color-bg-canvas) 0%, var(--color-bg-canvas) 35%, transparent 100%);pointer-events:none"></div>
+<div class="ds-glass" style="position:relative;z-index:2;width:calc(100% - 32px);max-width:1100px;margin:16px auto 0;border-top-left-radius:28px;border-top-right-radius:28px;border-bottom-left-radius:28px;border-bottom-right-radius:28px;background:var(--color-glass-fill);backdrop-filter:blur(var(--blur-glass-md)) saturate(var(--glass-saturation));-webkit-backdrop-filter:blur(var(--blur-glass-md)) saturate(var(--glass-saturation));border:1px solid var(--color-glass-edge);box-shadow:var(--shadow-float-md);pointer-events:auto;overflow:hidden;transition:border-radius var(--duration-slow) var(--ease-spring-soft);will-change:border-radius">
+<header style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding:12px 14px 12px 24px;min-height:56px">
+<a href="#home" style="font-weight:700;font-size:1.05rem;color:var(--color-text-primary);white-space:nowrap;text-decoration:none">Lawrence Velasco</a>
+<sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+<nav style="display:flex;gap:22px;align-items:center;flex-wrap:wrap">
+<a href="#personal-projects" onClick="{{ navToPersonal }}" style="font-size:0.92rem;text-decoration:none;white-space:nowrap;font-weight:{{ navPersonalWeight }};color:{{ navPersonalColor }}">Projects</a>
+<a href="#work-portfolio" onClick="{{ navToWork }}" style="font-size:0.92rem;text-decoration:none;white-space:nowrap;font-weight:{{ navWorkWeight }};color:{{ navWorkColor }}">Experience</a>
+<a href="#about" onClick="{{ navToAbout }}" style="font-size:0.92rem;text-decoration:none;white-space:nowrap;font-weight:{{ navAboutWeight }};color:{{ navAboutColor }}">About</a>
+</nav>
+</sc-if>
+<sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+<a href="mailto:me@lawrencevelasco.com" style="height:36px;padding:0 18px;border-radius:var(--radius-pill);background:var(--color-action-primary-bg);color:var(--color-action-primary-fg);display:inline-flex;align-items:center;justify-content:center;font-weight:600;font-size:0.85rem;text-decoration:none;white-space:nowrap;flex-shrink:0">Contact Lawrence</a>
+</sc-if>
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+<a href="mailto:me@lawrencevelasco.com" style="height:36px;padding:0 14px;border-radius:var(--radius-pill);background:var(--color-action-primary-bg);color:var(--color-action-primary-fg);display:inline-flex;align-items:center;justify-content:center;font-weight:600;font-size:0.8rem;text-decoration:none;white-space:nowrap">Contact</a>
+<button onClick="{{ toggleMobileMenu }}" aria-label="Menu" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:var(--radius-pill);border:1px solid var(--color-border-hairline);background:transparent;color:var(--color-text-primary);cursor:pointer;flex-shrink:0;padding:0">
+<sc-if value="{{ mobileMenuOpen }}" hint-placeholder-val="{{ false }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"></line><line x1="19" y1="5" x2="5" y2="19"></line></svg></sc-if>
+<sc-if value="{{ mobileMenuClosed }}" hint-placeholder-val="{{ true }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg></sc-if>
+</button>
+</div>
+</sc-if>
+</header>
+<div style="display:grid;grid-template-rows:{{ mobileMenuRows }};transition:grid-template-rows var(--duration-slow) var(--ease-spring-soft);will-change:grid-template-rows">
+<nav style="overflow:hidden;display:flex;flex-direction:column;gap:4px;padding:2px 14px 14px">
+<a href="#personal-projects" onClick="{{ mobileNavToPersonal }}" style="font-size:0.98rem;text-decoration:none;padding:12px 14px;border-radius:var(--radius-sm);font-weight:{{ navPersonalWeight }};color:{{ navPersonalColor }}">Projects</a>
+<a href="#work-portfolio" onClick="{{ mobileNavToWork }}" style="font-size:0.98rem;text-decoration:none;padding:12px 14px;border-radius:var(--radius-sm);font-weight:{{ navWorkWeight }};color:{{ navWorkColor }}">Experience</a>
+<a href="#about" onClick="{{ mobileNavToAbout }}" style="font-size:0.98rem;text-decoration:none;padding:12px 14px;border-radius:var(--radius-sm);font-weight:{{ navAboutWeight }};color:{{ navAboutColor }}">About</a>
+</nav>
+</div>
+</div>
+</div>
+
+<section id="home" style="max-width:1100px;margin:0 auto;padding:100px var(--space-8) var(--space-8);scroll-margin-top:90px">
+<div style="font-size:var(--text-label-size);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-action-primary-bg);margin-bottom:20px">Solutions &amp; AI / Philippines</div>
+<h1 style="font-size:var(--text-hero-size);line-height:var(--text-hero-lh);font-weight:var(--text-hero-weight);letter-spacing:var(--text-hero-tracking);margin:8px 0 12px;color:var(--color-text-primary)">Lawrence Velasco</h1>
+<div style="font-size:var(--text-subheading-size);font-weight:600;color:var(--color-text-secondary);margin-bottom:24px">Problem Solver and Solution Implementer</div>
+<p style="font-size:var(--text-body-lg-size);line-height:var(--text-body-lg-lh);color:var(--color-text-secondary);max-width:58ch;margin:0 0 36px">I've been the developer, and I've been the manager who still writes code. That gives me both sides — I understand your intent and the business behind it, and I have the technical depth, including applying AI well, to actually build it.</p>
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px">
+<a href="mailto:me@lawrencevelasco.com" style="height:var(--control-height-compact);padding:0 24px;border-radius:var(--radius-control);background:var(--color-action-primary-bg);color:var(--color-action-primary-fg);display:inline-flex;align-items:center;justify-content:center;font-weight:600;font-size:1rem;text-decoration:none">me@lawrencevelasco.com</a>
+<a href="https://www.linkedin.com/in/iamlawrencev/" target="_blank" rel="noopener" style="height:var(--control-height-compact);padding:0 24px;border-radius:var(--radius-control);border:1px solid var(--color-action-secondary-border);background:var(--color-action-secondary-bg);color:var(--color-action-secondary-fg);display:inline-flex;align-items:center;justify-content:center;font-weight:600;font-size:1rem;text-decoration:none">LinkedIn ↗</a>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:32px;padding:28px 0;border-top:1px solid var(--color-border-hairline);border-bottom:1px solid var(--color-border-hairline)">
+<div><div style="font-weight:700;font-size:var(--text-subheading-size);margin-bottom:4px">3 shipped apps</div><div style="color:var(--color-text-tertiary);font-size:var(--text-meta-size)">Live and in active use</div></div>
+<div><div style="font-weight:700;font-size:var(--text-subheading-size);margin-bottom:4px">Built it, then led it</div><div style="color:var(--color-text-tertiary);font-size:var(--text-meta-size)">Developer turned coordinator, still hands-on</div></div>
+<div><div style="font-weight:700;font-size:var(--text-subheading-size);margin-bottom:4px">AI-forward delivery</div><div style="color:var(--color-text-tertiary);font-size:var(--text-meta-size)">Applied with technical depth, not just prompts</div></div>
+<div><div style="font-weight:700;font-size:var(--text-subheading-size);margin-bottom:4px">Business-aware execution</div><div style="color:var(--color-text-tertiary);font-size:var(--text-meta-size)">Understands intent, not just specs</div></div>
+</div>
+</section>
+
+<section id="personal-projects" style="max-width:1100px;margin:0 auto;padding:var(--space-8) var(--space-8);scroll-margin-top:90px">
+<div style="margin-bottom:var(--space-8)">
+<span style="font-size:var(--text-label-size);font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--color-action-primary-bg)">Personal projects</span>
+<h2 style="font-size:var(--text-section-title-size);line-height:var(--text-section-title-lh);font-weight:var(--text-section-title-weight);letter-spacing:var(--text-section-title-tracking);margin:10px 0 0;color:var(--color-text-primary)">Shipped apps, real stores, useful problems.</h2>
+</div>
+<div style="display:flex;flex-direction:column;gap:32px">
+<sc-for list="{{ projects }}" as="p" hint-placeholder-count="3">
+<div style="display:grid;grid-template-columns:280px 1fr;gap:32px;background:var(--color-bg-surface-secondary);border-radius:var(--radius-lg);overflow:hidden;padding:28px;transition:box-shadow var(--duration-fast) var(--ease-standard)" style-hover="box-shadow:var(--shadow-float-md)">
+<div style="background:var(--neutral-900);border-radius:20px;padding:8px;height:280px;flex-shrink:0">
+<image-slot id="{{ p.slotId }}" shape="rounded" radius="14" placeholder="Drop a screenshot" style="width:100%;height:100%"></image-slot>
+</div>
+<div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px">
+<div>
+<div style="font-size:var(--text-subheading-size);font-weight:700;color:var(--color-text-primary)">{{ p.name }}</div>
+<div style="color:var(--color-text-secondary);font-size:1rem;margin-top:4px">{{ p.tagline }}</div>
+</div>
+<div style="font-size:var(--text-meta-size);color:var(--color-text-tertiary);font-weight:500;white-space:nowrap">{{ p.period }}</div>
+</div>
+<p style="margin:0;color:var(--color-text-secondary);font-size:0.98rem;line-height:1.6;max-width:65ch">{{ p.description }}</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;padding:16px 0;border-top:1px solid var(--color-border-hairline)">
+<div><div style="font-size:var(--text-meta-size);color:var(--color-text-tertiary);font-weight:600;text-transform:uppercase;letter-spacing:0.03em;margin-bottom:4px">Role</div><div style="font-size:0.92rem;color:var(--color-text-primary)">{{ p.role }}</div></div>
+<div><div style="font-size:var(--text-meta-size);color:var(--color-text-tertiary);font-weight:600;text-transform:uppercase;letter-spacing:0.03em;margin-bottom:4px">Platforms</div><div style="font-size:0.92rem;color:var(--color-text-primary)">{{ p.platforms }}</div></div>
+<div><div style="font-size:var(--text-meta-size);color:var(--color-text-tertiary);font-weight:600;text-transform:uppercase;letter-spacing:0.03em;margin-bottom:4px">Outcome</div><div style="font-size:0.92rem;color:var(--color-status-success)">{{ p.outcome }}</div></div>
+</div>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<sc-for list="{{ p.tech }}" as="t" hint-placeholder-count="3">
+<span style="display:inline-flex;align-items:center;padding:3px 10px;border-radius:var(--radius-pill);font-size:var(--text-meta-size);font-weight:600;background:var(--color-bg-surface);color:var(--color-text-secondary);transition:background var(--duration-fast) var(--ease-standard)" style-hover="background:var(--color-selection-bg);color:var(--color-selection-fg)">{{ t }}</span>
+</sc-for>
+</div>
+<div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:4px">
+<sc-for list="{{ p.links }}" as="lnk" hint-placeholder-count="2">
+<a href="{{ lnk.url }}" target="_blank" rel="noopener" style="font-size:0.9rem;font-weight:600;color:var(--color-link);text-decoration:none">{{ lnk.label }} ↗</a>
+</sc-for>
+</div>
+</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section id="work-portfolio" style="max-width:1100px;margin:0 auto;padding:var(--space-8) var(--space-8);scroll-margin-top:90px">
+<div style="margin-bottom:var(--space-8)">
+<span style="font-size:var(--text-label-size);font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--color-action-primary-bg)">Work portfolio</span>
+<h2 style="font-size:var(--text-section-title-size);line-height:var(--text-section-title-lh);font-weight:var(--text-section-title-weight);letter-spacing:var(--text-section-title-tracking);margin:10px 0 12px;color:var(--color-text-primary)">Selected professional work</h2>
+<p style="margin:0;color:var(--color-text-secondary);font-size:1.05rem;max-width:var(--content-measure)">Systems, automation, and business tools built across web, mobile, ERP, audit, and reporting workflows. Presented as anonymous case studies, without naming the employer.</p>
+</div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px">
+<sc-for list="{{ workTags }}" as="tag" hint-placeholder-count="8">
+<button onClick="{{ tag.select }}" style="height:36px;padding:0 16px;border-radius:var(--radius-pill);font-size:0.85rem;font-weight:600;cursor:pointer;background:{{ tag.bg }};color:{{ tag.fg }};border:1px solid {{ tag.border }}">{{ tag.label }}</button>
+</sc-for>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
+<sc-for list="{{ workItems }}" as="w" hint-placeholder-count="6">
+<div style="background:var(--color-bg-surface-secondary);border-radius:var(--radius-md);padding:24px;display:flex;flex-direction:column;gap:14px;transition:box-shadow var(--duration-fast) var(--ease-standard)" style-hover="box-shadow:var(--shadow-float-sm)">
+<div style="font-size:1.05rem;font-weight:700;color:var(--color-text-primary)">{{ w.title }}</div>
+<p style="margin:0;color:var(--color-text-secondary);font-size:0.92rem;line-height:1.55">{{ w.description }}</p>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto">
+<sc-for list="{{ w.tech }}" as="t" hint-placeholder-count="3">
+<span style="display:inline-flex;align-items:center;padding:3px 10px;border-radius:var(--radius-pill);font-size:var(--text-meta-size);font-weight:600;background:var(--color-bg-surface);color:var(--color-text-secondary)">{{ t }}</span>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section id="about" style="max-width:1100px;margin:0 auto;padding:var(--space-8) var(--space-8);scroll-margin-top:90px">
+<div style="margin-bottom:var(--space-8)">
+<span style="font-size:var(--text-label-size);font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--color-action-primary-bg)">About</span>
+<h2 style="font-size:var(--text-section-title-size);line-height:var(--text-section-title-lh);font-weight:var(--text-section-title-weight);letter-spacing:var(--text-section-title-tracking);margin:10px 0 12px;color:var(--color-text-primary)">A problem solver, not just a builder.</h2>
+<p style="margin:0;color:var(--color-text-secondary);font-size:1.05rem;max-width:70ch">I started as a developer, then became a manager while still writing code myself — so I've seen delivery from both ends. That's the gap that trips up a lot of freelance work: it's easy to write code or run a project, harder to do both well. My background spans React Native, .NET MAUI, Xamarin, native mobile, the .NET ecosystem, and increasingly AI-driven builds — applied with the business context to make sure they solve the right problem, not just a technical one.</p>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;margin-bottom:36px">
+<div style="padding:28px;border-radius:var(--radius-md);background:var(--color-bg-surface-secondary)">
+<div style="font-weight:700;font-size:1.05rem;margin-bottom:10px;color:var(--color-text-primary)">Technical depth</div>
+<p style="margin:0;color:var(--color-text-secondary);font-size:0.95rem;line-height:1.6">I get into architecture, platform constraints, performance, and implementation detail — including applying AI where it actually earns its place, not just where it's easy to bolt on.</p>
+</div>
+<div style="padding:28px;border-radius:var(--radius-md);background:var(--color-bg-surface-secondary)">
+<div style="font-weight:700;font-size:1.05rem;margin-bottom:10px;color:var(--color-text-primary)">Business context</div>
+<p style="margin:0;color:var(--color-text-secondary);font-size:0.95rem;line-height:1.6">Having managed delivery myself, I build toward your intent and outcomes, not just a spec — the difference between a solution that works and one that just ships.</p>
+</div>
+</div>
+
+<div style="margin-bottom:36px">
+<div style="font-weight:700;font-size:1.05rem;margin-bottom:16px;color:var(--color-text-primary)">Skills</div>
+<div style="display:flex;gap:10px;flex-wrap:wrap">
+<sc-for list="{{ skills }}" as="s" hint-placeholder-count="17">
+<span style="display:inline-flex;align-items:center;padding:6px 14px;border-radius:var(--radius-pill);font-size:0.85rem;font-weight:500;background:var(--color-bg-surface-secondary);color:var(--color-text-secondary);border:1px solid var(--color-border-hairline)">{{ s }}</span>
+</sc-for>
+</div>
+</div>
+
+<div style="margin-bottom:36px">
+<div style="font-weight:700;font-size:1.05rem;margin-bottom:16px;color:var(--color-text-primary)">Certifications</div>
+<div style="display:flex;flex-direction:column;gap:0">
+<sc-for list="{{ certifications }}" as="c" hint-placeholder-count="2">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--color-border-hairline);gap:16px;flex-wrap:wrap">
+<span style="font-size:0.95rem;color:var(--color-text-primary);font-weight:500">{{ c.name }}</span>
+<span style="font-size:var(--text-meta-size);color:var(--color-text-tertiary)">{{ c.date }}</span>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div>
+<div style="font-weight:700;font-size:1.05rem;margin-bottom:16px;color:var(--color-text-primary)">Professional timeline</div>
+<div style="position:relative">
+<div ref="{{ timelineRef }}" style="display:flex;gap:12px;overflow-x:auto;padding-bottom:16px;scrollbar-width:thin">
+<sc-for list="{{ timeline }}" as="tl" hint-placeholder-count="5">
+<button onClick="{{ tl.select }}" style="flex-shrink:0;min-width:180px;text-align:left;padding:16px 18px;border-radius:var(--radius-md);cursor:pointer;background:{{ tl.bg }};border:1px solid {{ tl.border }};color:{{ tl.fg }}">
+<div style="font-size:var(--text-meta-size);font-weight:600;margin-bottom:6px;opacity:0.8">{{ tl.range }}</div>
+<div style="font-size:0.95rem;font-weight:700">{{ tl.role }}</div>
+</button>
+</sc-for>
+</div>
+<div ref="{{ leftFadeRef }}" style="position:absolute;left:0;top:0;bottom:16px;width:56px;background:linear-gradient(to right, var(--color-bg-canvas), transparent);pointer-events:none;opacity:0;transition:opacity 0.15s ease"></div>
+<div ref="{{ rightFadeRef }}" style="position:absolute;right:0;top:0;bottom:16px;width:56px;background:linear-gradient(to left, var(--color-bg-canvas), transparent);pointer-events:none;opacity:0;transition:opacity 0.15s ease"></div>
+</div>
+</div>
+</section>
+
+<section id="contact" style="max-width:1100px;margin:0 auto;padding:var(--space-8) var(--space-8) var(--space-16);scroll-margin-top:90px">
+<div style="padding:56px 40px;border-radius:var(--radius-lg);background:var(--color-bg-surface-secondary);text-align:center;display:flex;flex-direction:column;align-items:center;gap:20px">
+<h2 style="font-size:var(--text-page-title-size);line-height:var(--text-page-title-lh);font-weight:var(--text-page-title-weight);letter-spacing:var(--text-page-title-tracking);margin:0;color:var(--color-text-primary)">Let's solve something together.</h2>
+<div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center">
+<a href="mailto:me@lawrencevelasco.com" style="height:var(--control-height-compact);padding:0 24px;border-radius:var(--radius-control);background:var(--color-action-primary-bg);color:var(--color-action-primary-fg);display:inline-flex;align-items:center;justify-content:center;font-weight:600;font-size:1rem;text-decoration:none">me@lawrencevelasco.com</a>
+<a href="https://www.linkedin.com/in/iamlawrencev/" target="_blank" rel="noopener" style="height:var(--control-height-compact);padding:0 24px;border-radius:var(--radius-control);border:1px solid var(--color-action-secondary-border);background:var(--color-action-secondary-bg);color:var(--color-action-secondary-fg);display:inline-flex;align-items:center;justify-content:center;font-weight:600;font-size:1rem;text-decoration:none">LinkedIn ↗</a>
+</div>
+</div>
+</section>
+
+<footer style="border-top:1px solid var(--color-border-hairline);padding:var(--space-6) var(--space-8);display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto">
+<span style="color:var(--color-text-tertiary);font-size:var(--text-meta-size)">© 2026 Lawrence Velasco</span>
+<div style="display:flex;gap:20px;flex-wrap:wrap">
+<a href="mailto:me@lawrencevelasco.com" style="color:var(--color-text-secondary);font-size:var(--text-meta-size);text-decoration:none">me@lawrencevelasco.com</a>
+<a href="https://www.linkedin.com/in/iamlawrencev/" target="_blank" rel="noopener" style="color:var(--color-text-secondary);font-size:var(--text-meta-size);text-decoration:none">LinkedIn</a>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    activeSection: 'home',
+    workFilter: 'All',
+    timelineIndex: 4,
+    isMobile: false,
+    mobileMenuOpen: false
+  };
+
+  projectsData = [
+    { id: 'sanbidet', slotId: 'shot-sanbidet', name: 'San Bidet', period: 'Dec 2018 – Present',
+      tagline: 'Find clean restrooms with bidets around the Philippines.',
+      description: 'A practical location app for travelers and locals navigating Metro Manila and the wider Philippines. San Bidet maps restroom locations with bidets and turns a very human problem into a calm, searchable product.',
+      role: 'Founder, designer, and mobile developer', platforms: 'iOS / Android',
+      outcome: '4.7 rating, 425 App Store ratings, local media coverage',
+      tech: ['React Native', 'Supabase', 'Xamarin', 'Native iOS'],
+      links: [{ label: 'App Store', url: 'https://apps.apple.com/ph/app/san-bidet/id1447757335' }, { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.iamlawrencev.sanbidet' }] },
+    { id: 'anivoice', slotId: 'shot-anivoice', name: 'AniVoice', period: 'Sep 2024 – Present',
+      tagline: 'Explore the voices behind anime characters.',
+      description: 'AniVoice helps anime fans search characters, discover the voice actors behind them, and follow other roles by the same talent across the anime world.',
+      role: 'Mobile and web developer', platforms: 'iOS / Android / Web',
+      outcome: 'iOS, Android, and web release with a searchable voice actor experience',
+      tech: ['React Native', 'TypeScript', 'Mobile web'],
+      links: [{ label: 'App Store', url: 'https://apps.apple.com/us/app/anivoice/id6633447119' }, { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.iamlawrencev.AniVoice' }, { label: 'Web app', url: 'https://anivoice.lawrencevelasco.com/' }] },
+    { id: 'pitchie', slotId: 'shot-pitchie', name: 'Pitchie', period: 'Apr 2020 – Present',
+      tagline: 'Train pitch recognition with a quick musical note game.',
+      description: 'Pitchie is an ear-training app that plays notes and asks users to identify them quickly, turning pitch recognition into a focused score-chasing exercise.',
+      role: 'Mobile developer', platforms: 'iOS / Android',
+      outcome: 'React Native refresh for a focused education and music utility',
+      tech: ['React Native', 'TypeScript'],
+      links: [{ label: 'App Store', url: 'https://apps.apple.com/us/app/pitchie/id1506482999' }, { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.iamlawrencev.pitchie' }] }
+  ];
+
+  workData = [
+    { title: 'Web ERP and mobile point-of-sale system', tags: ['Web Systems', 'Mobile', 'ERP / HRIS'], tech: ['Xamarin.Forms', 'C#', 'Angular 4', 'TypeScript'],
+      description: 'A web-based ERP system that consolidated transactions from various branches of a company in the food industry, bundled with a mobile point-of-sale system for transaction input.' },
+    { title: 'Automated report creator and consolidator', tags: ['Automation', 'ERP / HRIS'], tech: ['VBA Macro', 'Microsoft Excel'],
+      description: 'Automated reports generated from SAP and other ERP systems, formatting them for manual user access reviews.' },
+    { title: 'User access review', tags: ['Audit', 'Security'], tech: ['Microsoft Excel'],
+      description: 'Reviewed user access based on appropriateness and segregation of duties.' },
+    { title: 'ERP and HRIS update', tags: ['ERP / HRIS', 'Web Systems'], tech: ['VB6', 'MSSQL'],
+      description: 'Fixed existing bugs and added new features to an ERP system and HRIS.' },
+    { title: 'Database and operating system audit', tags: ['Audit', 'Security', 'Databases'], tech: ['Oracle Database', 'MSSQL', 'Windows Server', 'Oracle Enterprise Linux', 'Red Hat Enterprise Linux', 'IBM AIX'],
+      description: 'Audited databases and operating systems in accordance with BSP Circular 808.' },
+    { title: 'Source code review and vulnerability assessment', tags: ['Security', 'Audit', 'Databases'], tech: ['PowerBuilder', 'MSSQL'],
+      description: 'Reviewed a banking system for vulnerabilities and programming issues in accordance with BSP Circular 808.' }
+  ];
+
+  workTagsData = ['All', 'Web Systems', 'Mobile', 'Automation', 'ERP / HRIS', 'Audit', 'Security', 'Databases'];
+
+  skillsData = ['React Native', '.NET MAUI', 'Xamarin', 'Native Android', 'Native iOS', '.NET', 'TypeScript', 'C#', 'Supabase', 'Angular', 'VB6', 'MSSQL', 'Oracle Database', 'Microsoft Excel / VBA', 'PowerBuilder', 'Windows Server', 'Linux / IBM AIX'];
+
+  certificationsData = [
+    { name: 'Xamarin Certified Mobile Developer', date: 'Jan 2019' },
+    { name: 'Xamarin Certified Mobile Professional', date: 'Jan 2019' }
+  ];
+
+  timelineData = [
+    { role: 'Associate', range: 'Aug 2016 – Aug 2018' },
+    { role: 'Mobile Application Developer', range: 'Aug 2018 – Aug 2020' },
+    { role: 'Senior Mobile Application Developer', range: 'Aug 2020 – Nov 2021' },
+    { role: 'Lead Senior App Developer', range: 'Nov 2021 – Jun 2025' },
+    { role: 'Project Coordinator', range: 'Jun 2025 – Present' }
+  ];
+
+  sectionIds = ['home', 'personal-projects', 'work-portfolio', 'about', 'contact'];
+
+  componentDidMount() {
+    document.documentElement.setAttribute('data-theme', 'dark');
+
+    this.onScroll = () => {
+      if (this.scrollScheduled) return;
+      this.scrollScheduled = true;
+      requestAnimationFrame(() => {
+        this.scrollScheduled = false;
+        this.updateActiveSection();
+      });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.updateActiveSection();
+
+    this.mq = window.matchMedia('(max-width: 760px)');
+    this.onMqChange = (e) => this.setState({ isMobile: e.matches, mobileMenuOpen: false });
+    this.onMqChange(this.mq);
+    this.mq.addEventListener('change', this.onMqChange);
+  }
+
+  componentWillUnmount() {
+    if (this.onScroll) window.removeEventListener('scroll', this.onScroll);
+    if (this.timelineEl) this.timelineEl.removeEventListener('scroll', this.updateFades);
+    if (this.mq) this.mq.removeEventListener('change', this.onMqChange);
+    clearTimeout(this.navSyncTimer);
+  }
+
+  toggleMobileMenu = () => this.setState((s) => ({ mobileMenuOpen: !s.mobileMenuOpen }));
+
+  updateActiveSection = () => {
+    if (this.suppressScrollSync) return;
+    const doc = document.documentElement;
+    if (window.innerHeight + window.scrollY >= doc.scrollHeight - 2) {
+      this.setState({ activeSection: 'contact' });
+      return;
+    }
+    const offset = 130;
+    let current = this.sectionIds[0];
+    for (const id of this.sectionIds) {
+      const el = document.getElementById(id);
+      if (!el) continue;
+      if (el.getBoundingClientRect().top <= offset) current = id;
+    }
+    this.setState({ activeSection: current });
+  };
+
+  setWorkFilter = (tag) => this.setState({ workFilter: tag });
+  selectTimeline = (i) => this.setState({ timelineIndex: i });
+
+  navTo = (id) => {
+    clearTimeout(this.navSyncTimer);
+    this.suppressScrollSync = true;
+    this.setState({ activeSection: id });
+    this.navSyncTimer = setTimeout(() => {
+      this.suppressScrollSync = false;
+      this.updateActiveSection();
+    }, 900);
+  };
+  navToPersonal = () => this.navTo('personal-projects');
+  navToWork = () => this.navTo('work-portfolio');
+  navToAbout = () => this.navTo('about');
+  navToContact = () => this.navTo('contact');
+
+  mobileNavTo = (id) => { this.setState({ mobileMenuOpen: false }); this.navTo(id); };
+  mobileNavToPersonal = () => this.mobileNavTo('personal-projects');
+  mobileNavToWork = () => this.mobileNavTo('work-portfolio');
+  mobileNavToAbout = () => this.mobileNavTo('about');
+
+  updateFades = () => {
+    const el = this.timelineEl;
+    if (!el || !this.leftFadeEl || !this.rightFadeEl) return;
+    this.leftFadeEl.style.opacity = el.scrollLeft > 4 ? '1' : '0';
+    this.rightFadeEl.style.opacity = el.scrollLeft < el.scrollWidth - el.clientWidth - 4 ? '1' : '0';
+  };
+
+  setTimelineRef = (el) => {
+    if (!el || this.timelineEl === el) return;
+    this.timelineEl = el;
+    el.scrollLeft = el.scrollWidth;
+    this.updateFades();
+    el.addEventListener('scroll', this.updateFades, { passive: true });
+  };
+
+  setLeftFadeRef = (el) => { this.leftFadeEl = el; this.updateFades(); };
+  setRightFadeRef = (el) => { this.rightFadeEl = el; this.updateFades(); };
+
+  renderVals() {
+    const active = this.state.activeSection;
+    const navStyle = (key) => ({
+      weight: active === key ? 700 : 500,
+      color: active === key ? 'var(--color-text-primary)' : 'var(--color-text-secondary)'
+    });
+    const p = navStyle('personal-projects'), w = navStyle('work-portfolio'), a = navStyle('about'), c = navStyle('contact');
+
+    const workTags = this.workTagsData.map((label) => {
+      const isActive = label === this.state.workFilter;
+      return {
+        label,
+        select: () => this.setWorkFilter(label),
+        bg: isActive ? 'var(--color-selection-bg)' : 'var(--color-bg-surface-secondary)',
+        fg: isActive ? 'var(--color-selection-fg)' : 'var(--color-text-secondary)',
+        border: isActive ? 'var(--color-selection-border)' : 'var(--color-border-hairline)'
+      };
+    });
+
+    const workItems = this.workData.filter((w2) => this.state.workFilter === 'All' || w2.tags.includes(this.state.workFilter));
+
+    const timeline = this.timelineData.map((t, i) => {
+      const sel = i === this.state.timelineIndex;
+      return {
+        role: t.role, range: t.range, select: () => this.selectTimeline(i),
+        bg: sel ? 'var(--color-selection-bg)' : 'var(--color-bg-surface-secondary)',
+        fg: sel ? 'var(--color-selection-fg)' : 'var(--color-text-primary)',
+        border: sel ? 'var(--color-selection-border)' : 'var(--color-border-hairline)'
+      };
+    });
+
+    return {
+      timelineRef: this.setTimelineRef,
+      leftFadeRef: this.setLeftFadeRef, rightFadeRef: this.setRightFadeRef,
+      navToPersonal: this.navToPersonal, navToWork: this.navToWork, navToAbout: this.navToAbout, navToContact: this.navToContact,
+      mobileNavToPersonal: this.mobileNavToPersonal, mobileNavToWork: this.mobileNavToWork, mobileNavToAbout: this.mobileNavToAbout,
+      isMobile: this.state.isMobile, isDesktop: !this.state.isMobile,
+      mobileMenuOpen: this.state.mobileMenuOpen, mobileMenuClosed: !this.state.mobileMenuOpen,
+      toggleMobileMenu: this.toggleMobileMenu,
+      mobileMenuRows: this.state.mobileMenuOpen ? '1fr' : '0fr',
+      navPersonalWeight: p.weight, navPersonalColor: p.color,
+      navWorkWeight: w.weight, navWorkColor: w.color,
+      navAboutWeight: a.weight, navAboutColor: a.color,
+      navContactWeight: c.weight, navContactColor: c.color,
+      projects: this.projectsData,
+      workTags, workItems,
+      skills: this.skillsData,
+      certifications: this.certificationsData,
+      timeline
+    };
+  }
+}
+</script>
+</body>
+</html>
