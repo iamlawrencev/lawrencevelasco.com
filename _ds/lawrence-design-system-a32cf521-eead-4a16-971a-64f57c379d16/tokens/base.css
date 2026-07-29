@@ -1,7 +1,0 @@
-*{box-sizing:border-box;}
-html{-webkit-text-size-adjust:100%;}
-body{margin:0;font-family:var(--font-sans);background:var(--color-bg-canvas);color:var(--color-text-primary);font-size:var(--text-body-size);line-height:var(--text-body-lh);text-wrap:pretty;}
-a{color:var(--color-link);text-decoration:none;}
-a:hover{color:var(--color-link-hover);text-decoration:underline;}
-:focus-visible{outline:2px solid var(--color-focus-ring);outline-offset:2px;border-radius:var(--radius-xs);}
-@media (prefers-reduced-transparency:reduce){.ds-glass{backdrop-filter:none !important;background:var(--color-bg-surface) !important;}}
