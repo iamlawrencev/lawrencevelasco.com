@@ -19,7 +19,36 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
   <link rel="canonical" href="https://iamlawrencev.github.io/lawrencevelasco.com/">
   <link rel="sitemap" type="application/xml" href="https://iamlawrencev.github.io/lawrencevelasco.com/sitemap.xml">
-  <link rel="stylesheet" href="styles.css?v=32204dd">
+  <style>
+    :root { --bg:#17140f; --surface:#211e19; --text:#fcfbf9; --muted:#c2b9a9; --subtle:#8a8072; --line:rgba(247,245,241,.12); --accent:#fa9a2e; --accent-strong:#ffb157; --max:1100px; }
+    *,*::before,*::after { box-sizing:border-box; }
+    html { background-color:var(--bg); color-scheme:dark; }
+    body { margin:0; color:var(--text); background-color:var(--bg); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.6; text-wrap:pretty; }
+    .safe-area-cover { position:fixed; z-index:9; top:0; right:0; left:0; height:max(64px,env(safe-area-inset-top)); background:var(--bg); pointer-events:none; }
+    .container { width:min(calc(100% - 32px),var(--max)); margin-inline:auto; }
+    .site-header { position:sticky; top:16px; z-index:10; width:min(calc(100% - 32px),var(--max)); margin:16px auto 0; border:1px solid rgba(247,245,241,.10); border-radius:28px; background:rgba(31,27,21,.58); box-shadow:0 8px 24px rgba(0,0,0,.45); overflow:hidden; }
+    .nav { width:auto; min-height:56px; margin:0; padding:12px 14px 12px 24px; display:flex; gap:20px; align-items:center; justify-content:space-between; }
+    .brand { color:var(--text); font-weight:750; font-size:1.05rem; white-space:nowrap; }
+    .nav-links { display:flex; gap:22px; align-items:center; }
+    .nav-links a { color:var(--muted); font-size:.92rem; font-weight:500; white-space:nowrap; }
+    .menu-toggle { display:none; }
+    .button { min-height:42px; padding:0 18px; display:inline-flex; align-items:center; justify-content:center; border:0; border-radius:12px; background:var(--accent); color:#1a1200; font-weight:750; text-decoration:none; }
+    .button-small { min-height:36px; padding-inline:18px; border-radius:999px; font-size:.85rem; }
+    .hero { padding:58px 32px 0; }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { max-width:900px; margin-bottom:8px; font-size:clamp(3rem,8vw,5rem); line-height:1.02; letter-spacing:-.045em; }
+    .hero-title { margin-bottom:24px; color:var(--muted); font-size:1.25rem; font-weight:750; }
+    .hero-copy { max-width:700px; margin-bottom:28px; color:var(--muted); font-size:1.08rem; }
+    .hero-actions { display:flex; gap:14px; flex-wrap:wrap; }
+    .metrics { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin:38px 0 0; padding:28px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .metrics div { min-width:0; }
+    .metrics dt { font-size:1.05rem; font-weight:800; line-height:1.45; }
+    .metrics dd { margin:4px 0 0; color:var(--subtle); font-size:.9rem; }
+    @media (max-width:800px) { .nav { flex-wrap:wrap; padding-inline:18px; gap:12px; } .menu-toggle { display:flex; } .nav-links { display:none; } .nav-links.open { display:flex; flex:0 0 100%; flex-direction:column; align-items:stretch; } .nav-contact { display:none; } .hero { padding-inline:0; } .metrics { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:480px) { .metrics { grid-template-columns:1fr; } .hero-actions { align-items:stretch; flex-direction:column; } .button { width:100%; } }
+  </style>
+  <link rel="preload" href="styles.css?v=20260729" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="styles.css?v=20260729"></noscript>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Lawrence Velasco">
   <meta property="og:title" content="Lawrence Velasco | Software Developer">
@@ -134,7 +163,7 @@
       <h2>Things I built because I wanted them to exist.</h2>
       <div class="project-list">
         <article class="project-card">
-          <div class="project-visual"><img src="assets/projects/san-bidet-app-store.jpg" width="600" height="1066" loading="lazy" decoding="async" alt="San Bidet map showing restroom and bidet locations in Metro Manila"></div>
+          <div class="project-visual"><img src="assets/projects/san-bidet-app-store-320.webp" srcset="assets/projects/san-bidet-app-store-320.webp 320w" sizes="(max-width: 800px) 252px, 280px" width="320" height="569" loading="lazy" decoding="async" alt="San Bidet map showing restroom and bidet locations in Metro Manila"></div>
           <div class="project-content">
             <div class="project-heading"><div><h3>San Bidet</h3><p>Find clean restrooms with bidets around the Philippines.</p></div><time datetime="2018-12">Dec 2018 – Present</time></div>
             <p>Finding a clean restroom with a bidet can be harder than it should be, especially while traveling. I built San Bidet to solve that for myself first, then put it out for anyone else running into the same problem.</p>
@@ -145,7 +174,7 @@
         </article>
 
         <article class="project-card">
-          <div class="project-visual"><img src="assets/projects/anivoice-app-store.webp" width="600" height="1300" loading="lazy" decoding="async" alt="AniVoice app screen listing anime characters and voice actors"></div>
+          <div class="project-visual"><img src="assets/projects/anivoice-app-store-320.webp" srcset="assets/projects/anivoice-app-store-320.webp 320w" sizes="(max-width: 800px) 252px, 280px" width="320" height="696" loading="lazy" decoding="async" alt="AniVoice app screen listing anime characters and voice actors"></div>
           <div class="project-content">
             <div class="project-heading"><div><h3>AniVoice</h3><p>Explore the voices behind anime characters.</p></div><time datetime="2024-09">Sep 2024 – Present</time></div>
             <p>I'm the kind of anime fan who recognizes a voice before I place the character, and I got tired of not being able to look that up easily. AniVoice is the searchable database I wished existed, covering characters, voice actors, and the roles connecting them.</p>
@@ -157,8 +186,8 @@
 
         <article class="project-card">
           <div class="project-visual project-visual-pair">
-            <img src="assets/projects/pitchie-app-store-1.webp" width="600" height="1300" loading="lazy" decoding="async" alt="Pitchie start screen">
-            <img src="assets/projects/pitchie-app-store-2.webp" width="600" height="1300" loading="lazy" decoding="async" alt="Pitchie pitch-recognition game screen">
+            <img src="assets/projects/pitchie-app-store-160.webp" srcset="assets/projects/pitchie-app-store-160.webp 160w, assets/projects/pitchie-app-store-240.webp 240w" sizes="(max-width: 800px) 50vw, 140px" width="160" height="347" loading="lazy" decoding="async" alt="Pitchie start screen">
+            <img src="assets/projects/pitchie-app-store-2-160.webp" srcset="assets/projects/pitchie-app-store-2-160.webp 160w, assets/projects/pitchie-app-store-2-240.webp 240w" sizes="(max-width: 800px) 50vw, 140px" width="160" height="347" loading="lazy" decoding="async" alt="Pitchie pitch-recognition game screen">
           </div>
           <div class="project-content">
             <div class="project-heading"><div><h3>Pitchie</h3><p>Train pitch recognition with a quick musical note game.</p></div><time datetime="2020-04">Apr 2020 – Present</time></div>
