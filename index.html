@@ -4,16 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lawrence Velasco | Software Developer</title>
-  <meta name="description" content="Lawrence Velasco writes code and manages software delivery in equal measure, weighing technical tradeoffs and helping ideas make it all the way to release.">
+  <meta name="description" content="Lawrence Velasco builds software and helps carry projects from idea to release, connecting technical decisions to real outcomes.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="theme-color" content="#17140f">
+  <meta name="color-scheme" content="dark">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
   <link rel="canonical" href="https://iamlawrencev.github.io/lawrencevelasco.com/">
   <link rel="sitemap" type="application/xml" href="https://iamlawrencev.github.io/lawrencevelasco.com/sitemap.xml">
   <link rel="stylesheet" href="styles.css">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Lawrence Velasco">
   <meta property="og:title" content="Lawrence Velasco | Software Developer">
-  <meta property="og:description" content="Writing code and managing delivery, in equal measure — from idea to release.">
+  <meta property="og:description" content="Building software and helping carry projects from idea to release.">
   <meta property="og:url" content="https://iamlawrencev.github.io/lawrencevelasco.com/">
   <meta property="og:image" content="https://iamlawrencev.github.io/lawrencevelasco.com/assets/social-preview-v3.jpg">
   <meta property="og:image:alt" content="Lawrence Velasco, software developer">
@@ -31,7 +40,7 @@
         "name": "Lawrence Velasco",
         "url": "https://iamlawrencev.github.io/lawrencevelasco.com/",
         "jobTitle": "Software Developer",
-        "description": "Lawrence Velasco writes code and manages software delivery in equal measure. He weighs technical tradeoffs and helps carry an idea through to release.",
+        "description": "Lawrence Velasco builds software and helps carry projects from idea to release, connecting technical decisions to real outcomes.",
         "sameAs": ["https://www.linkedin.com/in/iamlawrencev/"],
         "knowsAbout": ["React Native", ".NET MAUI", "Xamarin", "Native iOS", "Native Android", "TypeScript", "C#", ".NET", "Supabase", "Angular", "Microsoft Excel and VBA", "Databases", "Business systems", "Systems automation", "Mobile architecture", "Software delivery", "AI-assisted development"]
       },
@@ -79,15 +88,6 @@
         "description": "An independently shipped pitch-recognition training app with a quick musical-note game.",
         "author": {"@id": "https://iamlawrencev.github.io/lawrencevelasco.com/#lawrence-velasco"},
         "url": "https://apps.apple.com/us/app/pitchie/id1506482999"
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {"@type": "Question", "name": "What do you do?", "acceptedAnswer": {"@type": "Answer", "text": "I write code and manage the projects it's part of. Being equally capable at both is the strength I bring — a lot of project problems come from someone being too focused on just one side or the other."}},
-          {"@type": "Question", "name": "How do you split code and project work?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the project. Some weeks I'm mostly writing code, other weeks mostly managing scope and communication. I keep both active rather than letting one go quiet, since neither side works well without the other close by."}},
-          {"@type": "Question", "name": "What technologies do you work with?", "acceptedAnswer": {"@type": "Answer", "text": "My core stack is React Native, .NET MAUI, native iOS and Android, TypeScript, C#, and .NET, plus databases, business systems, automation, and some AI-assisted development along the way."}},
-          {"@type": "Question", "name": "What products have you shipped?", "acceptedAnswer": {"@type": "Answer", "text": "On my own time, I've shipped San Bidet (a restroom finder), AniVoice (an anime voice-actor lookup), and Pitchie (a pitch-recognition game)."}}
-        ]
       }
     ]
   }
@@ -97,11 +97,14 @@
   <header class="site-header">
     <nav class="nav container" aria-label="Primary navigation">
       <a class="brand" href="#home">Lawrence Velasco</a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+        <svg class="menu-icon menu-icon-open" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+        <svg class="menu-icon menu-icon-close" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="5" x2="19" y2="19"></line><line x1="19" y1="5" x2="5" y2="19"></line></svg>
+      </button>
       <div class="nav-links" id="nav-links">
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#about">About</a>
+        <a href="#projects" data-nav-section="projects">Projects</a>
+        <a href="#experience" data-nav-section="experience">Work</a>
+        <a href="#about" data-nav-section="about">About</a>
       </div>
       <a class="button button-small nav-contact" href="mailto:me@lawrencevelasco.com">Get in touch</a>
     </nav>
@@ -110,17 +113,17 @@
   <main id="home">
     <section class="hero container">
       <h1>Lawrence Velasco</h1>
-      <p class="hero-title">Most projects need both sides. I bring both.</p>
-      <p class="hero-copy">I started as a developer, and a few years in I also took on responsibility for the project side — scope, timelines, talking to whoever actually wanted the thing built. I never gave up either one. A lot of project trouble comes from someone being too focused on just one side: the code drifts from what people actually need, or the plan stops matching what's realistic to build. Being equally capable on both is what keeps that from happening, and it's the main strength I bring to a project.</p>
+      <p class="hero-title">I build the software and help move it forward.</p>
+      <p class="hero-copy">I started as a developer, then took on more responsibility for the project side — scope, priorities, timelines, and communication. I still write code, but I also help teams decide what to build, what to simplify, and what is realistic to ship. That combination keeps technical decisions connected to the people and outcomes they are meant to serve.</p>
       <div class="hero-actions">
-        <a class="button" href="mailto:me@lawrencevelasco.com">me@lawrencevelasco.com</a>
+        <a class="button" href="mailto:me@lawrencevelasco.com">Get in touch</a>
         <a class="button button-secondary" href="https://www.linkedin.com/in/iamlawrencev/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
       </div>
       <dl class="metrics">
-        <div><dt>Since 2016</dt><dd>Writing and shipping software professionally</dd></div>
-        <div><dt>3 apps shipped on my own</dt><dd>San Bidet, AniVoice, and Pitchie — idea to release</dd></div>
-        <div><dt>Code and project management</dt><dd>Still writing code, still running the project</dd></div>
-        <div><dt>Mobile, web, and business systems</dt><dd>From consumer apps to internal ERP tools</dd></div>
+        <div><dt>A decade of experience</dt><dd>Building and shipping software since 2016</dd></div>
+        <div><dt>Projects delivered</dt><dd>Including three apps built and shipped independently</dd></div>
+        <div><dt>AI-enhanced output</dt><dd>Using AI effectively where it matters, never blindly</dd></div>
+        <div><dt>Broad platform experience</dt><dd>Mobile, web, connected devices, and business systems</dd></div>
       </dl>
     </section>
 
@@ -191,27 +194,14 @@
 
     <section class="section container" id="about">
       <p class="eyebrow">About</p>
-      <h2>I do both. Neither is the backup plan.</h2>
-      <p class="section-intro">I started in 2016 as a software developer. A few years in, I also took on more responsibility for the project side — scope, timelines, talking to the people who actually wanted the thing built. I kept doing both rather than picking one. Projects tend to go sideways when someone is too focused on just the code or just the plan around it: either the build drifts from what people actually need, or the plan stops matching what's realistic to build. Being equally capable on both sides is what keeps a project moving smoothly, and it's the strength I bring to the table.</p>
+      <h2>A developer who thinks beyond the code.</h2>
+      <p class="section-intro">I started in 2016 as a software developer. Over time, I took on more responsibility for the project side — scope, priorities, timelines, and the conversations that turn an idea into something real. I still write and review code, but I also help teams make better decisions about what to build and how to get it shipped. I now lead my company's transition to AI, including the move to fully agentic workflows, with a focus on optimizing processes and making work better, faster, and easier for everyone involved.</p>
       <div class="about-grid"><article><h3>Developer’s perspective</h3><p>I still write and review code regularly, so I have a current sense of architecture, platform limits, and the tradeoffs that come with maintainability and performance. When someone's excited about an idea, I can usually tell early on what's going to be simple and what's going to be a slog.</p></article><article><h3>Manager’s perspective</h3><p>On the other side, I'm the one thinking about scope, priorities, and what a client or team actually needs to hear about progress — including the parts nobody enjoys, like saying a deadline needs to move. Having both perspectives at once means fewer surprises for everyone by the time something ships.</p></article></div>
-      <h3 class="subheading">Professional timeline</h3>
-      <ol class="timeline"><li><span>Aug 2016 – Aug 2018</span> Associate</li><li><span>Aug 2018 – Aug 2020</span> Mobile Application Developer</li><li><span>Aug 2020 – Nov 2021</span> Senior Mobile Application Developer</li><li><span>Nov 2021 – Jun 2025</span> Lead Senior App Developer</li><li><span>Jun 2025 – Present</span> Project Coordinator</li></ol>
     </section>
 
-    <section class="section container" id="faq">
-      <p class="eyebrow">FAQ</p>
-      <h2>How I work</h2>
-      <div class="faq-list">
-        <details><summary>What do you do?</summary><p>I write code and manage the projects it's part of. Being equally capable at both is the strength I bring — a lot of project problems come from someone being too focused on just one side or the other.</p></details>
-        <details><summary>How do you split code and project work?</summary><p>It depends on the project. Some weeks I'm mostly writing code, other weeks mostly managing scope and communication. I keep both active rather than letting one go quiet, since neither side works well without the other close by.</p></details>
-        <details><summary>What technologies do you work with?</summary><p>My core stack is React Native, .NET MAUI, native iOS and Android, TypeScript, C#, and .NET, plus databases, business systems, automation, and some AI-assisted development along the way.</p></details>
-        <details><summary>What products have you shipped?</summary><p>On my own time, I've shipped San Bidet (a restroom finder), AniVoice (an anime voice-actor lookup), and Pitchie (a pitch-recognition game).</p></details>
-      </div>
-    </section>
-
-    <section class="container contact" id="contact"><h2>Building something, or thinking about it?</h2><p>Send me a note about what it is and where you're at. I'll get back to you and we can figure out the rest from there.</p><div><a class="button" href="mailto:me@lawrencevelasco.com">me@lawrencevelasco.com</a><a class="button button-secondary" href="https://www.linkedin.com/in/iamlawrencev/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></section>
+    <section class="container contact" id="contact"><h2>Building something, or thinking about it?</h2><p>Send me a note about what it is and where you're at. I'll get back to you and we can figure out the rest from there.</p><div><a class="button" href="mailto:me@lawrencevelasco.com">Get in touch</a><a class="button button-secondary" href="https://www.linkedin.com/in/iamlawrencev/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></section>
   </main>
-  <footer class="container"><span>© 2026 Lawrence Velasco</span><div><a href="mailto:me@lawrencevelasco.com">me@lawrencevelasco.com</a><a href="https://www.linkedin.com/in/iamlawrencev/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div></footer>
+  <footer class="container"><span>© 2026 Lawrence Velasco</span><div><a href="mailto:me@lawrencevelasco.com">Get in touch</a><a href="https://www.linkedin.com/in/iamlawrencev/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div></footer>
   <script src="script.js" defer></script>
 </body>
 </html>
