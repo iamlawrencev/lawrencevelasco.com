@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://iamlawrencev.github.io/lawrencevelasco.com/sitemap.xml
