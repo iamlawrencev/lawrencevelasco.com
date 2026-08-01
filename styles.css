@@ -51,7 +51,7 @@ p a, dd a, li a { text-decoration:underline; text-underline-offset:3px; }
 .project-heading { display:flex; gap:16px; align-items:start; justify-content:space-between; }
 .project-heading > div > p, .project-content > p { color:var(--muted); }
 .project-heading time { flex:none; color:var(--subtle); font-size:.85rem; white-space:nowrap; }
-.project-facts { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin:18px 0; padding:16px 0; border-top:1px solid var(--line); }
+.project-facts { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin:18px 0; padding:16px 0; border-top:1px solid var(--line); }
 .project-facts dt { color:var(--subtle); font-size:.75rem; font-weight:750; letter-spacing:.08em; text-transform:uppercase; }
 .project-facts dd { margin:5px 0 0; font-weight:650; }
 .project-facts div:last-child dd { color:#85cf9f; }
