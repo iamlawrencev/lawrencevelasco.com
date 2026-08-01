@@ -2,24 +2,17 @@
 
 > Software solutions developer and AI specialist building practical mobile, web, backend, and AI-assisted products.
 
-## About
+Lawrence's work covers software solutions and product delivery, mobile apps for iOS and Android, web and backend systems, AI-assisted development, connected devices, and project leadership through release.
 
-- Official portfolio: https://lawrencevelasco.com/
-- AI-enabled software delivery approach: https://lawrencevelasco.com/ai-enabled-software-delivery/
-- LinkedIn: https://www.linkedin.com/in/iamlawrencev/
-- GitHub: https://github.com/iamlawrencev
+## Pages
 
-## Independently shipped apps
+- [Official portfolio](https://lawrencevelasco.com/): Overview of Lawrence's software, AI, mobile, web, and delivery work.
+- [AI-enabled software delivery](https://lawrencevelasco.com/ai-enabled-software-delivery/): Approach to bounded tasks, durable context, automated checks, and human review.
+- [San Bidet](https://lawrencevelasco.com/projects/san-bidet/): Independently shipped restroom and bidet finder for the Philippines.
+- [AniVoice](https://lawrencevelasco.com/projects/anivoice/): Independently shipped app for discovering anime characters and voice actors.
+- [Pitchie](https://lawrencevelasco.com/projects/pitchie/): Independently shipped pitch-recognition training game.
 
-- San Bidet: https://lawrencevelasco.com/projects/san-bidet/
-- AniVoice: https://lawrencevelasco.com/projects/anivoice/
-- Pitchie: https://lawrencevelasco.com/projects/pitchie/
+## Profiles
 
-## Areas of work
-
-- Software solutions and product delivery
-- Mobile apps for iOS and Android
-- Web and backend systems
-- AI-assisted development and agentic workflows
-- Connected devices and mobile architecture
-- Project leadership, scope, priorities, and release delivery
+- [LinkedIn](https://www.linkedin.com/in/iamlawrencev/): Professional profile.
+- [GitHub](https://github.com/iamlawrencev): Code and project profile.
