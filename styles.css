@@ -40,6 +40,7 @@ h3 { margin-bottom:6px; font-size:1.17rem; line-height:1.25; }
 .section { padding:72px 32px 0; scroll-margin-top:92px; }
 .eyebrow { margin-bottom:10px; color:var(--accent); font-size:.86rem; font-weight:800; letter-spacing:.045em; text-transform:uppercase; }
 .section-intro { max-width:770px; margin-bottom:28px; color:var(--muted); font-size:1.02rem; }
+.section-intro a { text-decoration:underline; text-underline-offset:3px; }
 .project-list { display:grid; gap:30px; }
 .project-card { display:grid; grid-template-columns:280px 1fr; gap:32px; padding:28px; background:var(--surface); border:1px solid rgba(255,255,255,.03); border-radius:18px; }
 .project-visual { min-width:0; height:280px; padding:8px; display:flex; align-items:center; justify-content:center; overflow:hidden; border-radius:20px; background:#16130f; }
@@ -56,8 +57,9 @@ h3 { margin-bottom:6px; font-size:1.17rem; line-height:1.25; }
 .project-facts div:last-child dd { color:#85cf9f; }
 .tags,.skill-list { display:flex; gap:8px; flex-wrap:wrap; margin:0; padding:0; list-style:none; }
 .tags li { padding:3px 10px; color:var(--muted); border-radius:999px; background:#1a1712; font-size:.78rem; font-weight:700; }
-.store-links,.press-links,.profile-links { display:flex; gap:22px; flex-wrap:wrap; margin:16px 0 0 !important; font-size:.92rem; font-weight:750; }
-.press-links span,.profile-links span { color:var(--subtle); }
+.store-links,.press-links,.profile-links { display:flex; gap:12px 22px; align-items:center; flex-wrap:wrap; margin:16px 0 0 !important; font-size:.92rem; font-weight:750; }
+.store-links a,.press-links a,.profile-links a { min-height:44px; display:inline-flex; align-items:center; }
+.press-links span,.profile-links span { min-height:44px; display:inline-flex; align-items:center; color:var(--subtle); }
 .filters { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:24px; }
 .filter { padding:7px 14px; border:1px solid var(--line); border-radius:999px; color:var(--muted); background:var(--surface); font:inherit; font-size:.85rem; font-weight:700; cursor:pointer; }
 .filter:hover,.filter.active { border-color:var(--accent); color:#ffcc85; background:rgba(242,133,0,.14); }
