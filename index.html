@@ -46,8 +46,8 @@
     @media (max-width:800px) { .nav { flex-wrap:wrap; padding-inline:18px; gap:12px; } .menu-toggle { display:flex; } .nav-links { display:none; } .nav-links.open { display:flex; flex:0 0 100%; flex-direction:column; align-items:stretch; } .nav-contact { display:none; } .hero { padding-inline:0; } .metrics { grid-template-columns:repeat(2,1fr); } }
     @media (max-width:480px) { .metrics { grid-template-columns:1fr; } .hero-actions { align-items:stretch; flex-direction:column; } .button { width:100%; } }
   </style>
-  <link rel="preload" href="styles.css?v=20260801" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="styles.css?v=20260801"></noscript>
+  <link rel="preload" href="styles.css?v=20260801b" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="styles.css?v=20260801b"></noscript>
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_PH">
   <meta property="og:site_name" content="Lawrence Velasco">
@@ -75,6 +75,15 @@
         "url": "https://lawrencevelasco.com/",
         "jobTitle": ["Software Solutions Developer", "AI Specialist"],
         "description": "Lawrence Velasco is a Philippines-based software solutions developer and AI specialist who turns complex ideas into practical, useful products.",
+        "image": {
+          "@type": "ImageObject",
+          "@id": "https://lawrencevelasco.com/#portrait",
+          "url": "https://lawrencevelasco.com/assets/lawrence-velasco-portrait-1021.webp",
+          "contentUrl": "https://lawrencevelasco.com/assets/lawrence-velasco-portrait-1021.webp",
+          "width": 1021,
+          "height": 1021,
+          "caption": "Portrait of Lawrence Velasco"
+        },
         "sameAs": [
           "https://www.linkedin.com/in/iamlawrencev/",
           "https://github.com/iamlawrencev",
@@ -102,8 +111,9 @@
         "url": "https://lawrencevelasco.com/",
         "name": "Lawrence Velasco | Software Solutions & AI Specialist",
         "description": "Official portfolio of Lawrence Velasco, a Philippines-based software solutions developer and AI specialist.",
-        "dateModified": "2026-08-01T13:38:47+08:00",
+        "dateModified": "2026-08-01T18:30:34+08:00",
         "isPartOf": {"@id": "https://lawrencevelasco.com/#website"},
+        "primaryImageOfPage": {"@id": "https://lawrencevelasco.com/#portrait"},
         "mainEntity": {"@id": "https://lawrencevelasco.com/#lawrence-velasco"},
         "about": {"@id": "https://lawrencevelasco.com/#lawrence-velasco"},
         "author": {"@id": "https://lawrencevelasco.com/#lawrence-velasco"},
@@ -249,9 +259,17 @@
 
     <section class="section container" id="about">
       <p class="eyebrow">About</p>
-      <h2>A problem solver who can build the solution.</h2>
-      <p class="section-intro">I started in 2016 as a software developer. Over time, I took on more responsibility for the project side — scope, priorities, timelines, and the conversations that turn an idea into something real. I still write and review code, but I also help teams make better decisions about what to build and how to get it shipped. I now lead my company's transition to AI, including the move to fully agentic workflows, with a focus on optimizing processes and making work better, faster, and easier for everyone involved.</p>
-      <p class="section-intro">My approach treats AI as a strong delivery tool, with bounded work, durable context, automated checks, and human judgment. <a href="/ai-enabled-software-delivery/">Read how I structure AI-enabled software delivery →</a></p>
+      <div class="about-profile">
+        <div>
+          <h2>A problem solver who can build the solution.</h2>
+          <p class="section-intro">I started in 2016 as a software developer. Over time, I took on more responsibility for the project side — scope, priorities, timelines, and the conversations that turn an idea into something real. I still write and review code, but I also help teams make better decisions about what to build and how to get it shipped. I now lead my company's transition to AI, including the move to fully agentic workflows, with a focus on optimizing processes and making work better, faster, and easier for everyone involved.</p>
+          <p class="section-intro">My approach treats AI as a strong delivery tool, with bounded work, durable context, automated checks, and human judgment. <a href="/ai-enabled-software-delivery/">Read how I structure AI-enabled software delivery →</a></p>
+        </div>
+        <figure class="profile-portrait">
+          <img src="/assets/lawrence-velasco-portrait-512.webp" srcset="/assets/lawrence-velasco-portrait-512.webp 512w, /assets/lawrence-velasco-portrait-1021.webp 1021w" sizes="(max-width: 800px) 220px, 260px" width="1021" height="1021" loading="lazy" decoding="async" alt="Portrait of Lawrence Velasco, software solutions developer and AI specialist">
+          <figcaption>Lawrence Velasco · Software Solutions &amp; AI Specialist</figcaption>
+        </figure>
+      </div>
       <div class="about-grid"><article><h3>Builder’s perspective</h3><p>I still write and review code regularly, so I have a current sense of architecture, platform limits, and the tradeoffs that come with maintainability and performance. When someone's excited about an idea, I can usually tell early on what's going to be simple and what's going to be a slog.</p></article><article><h3>Delivery perspective</h3><p>On the other side, I'm the one thinking about scope, priorities, and what a client or team actually needs to hear about progress — including the parts nobody enjoys, like saying a deadline needs to move. Having both perspectives at once means fewer surprises for everyone by the time something ships.</p></article></div>
       <h3>Tools and platforms</h3>
       <ul class="skill-list"><li>React Native</li><li>.NET MAUI</li><li>Xamarin</li><li>Native iOS and Android</li><li>TypeScript</li><li>C# and .NET</li><li>Supabase</li><li>Web and backend systems</li><li>Connected devices</li><li>AI-assisted development</li><li>Software delivery</li></ul>

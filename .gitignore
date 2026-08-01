@@ -1,1 +1,47 @@
+# macOS
 .DS_Store
+._*
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Credentials and private keys
+credentials.json
+credentials.*.json
+secrets.json
+secrets.*.json
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.mobileprovision
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Dependencies and generated output
+node_modules/
+dist/
+build/
+coverage/
+.cache/
