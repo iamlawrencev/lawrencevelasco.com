@@ -1,0 +1,25 @@
+# Lawrence Velasco
+
+> Software solutions developer and AI specialist building practical mobile, web, backend, and AI-assisted products.
+
+## About
+
+- Official portfolio: https://lawrencevelasco.com/
+- AI-enabled software delivery approach: https://lawrencevelasco.com/ai-enabled-software-delivery/
+- LinkedIn: https://www.linkedin.com/in/iamlawrencev/
+- GitHub: https://github.com/iamlawrencev
+
+## Independently shipped apps
+
+- San Bidet: https://lawrencevelasco.com/projects/san-bidet/
+- AniVoice: https://lawrencevelasco.com/projects/anivoice/
+- Pitchie: https://lawrencevelasco.com/projects/pitchie/
+
+## Areas of work
+
+- Software solutions and product delivery
+- Mobile apps for iOS and Android
+- Web and backend systems
+- AI-assisted development and agentic workflows
+- Connected devices and mobile architecture
+- Project leadership, scope, priorities, and release delivery
