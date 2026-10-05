@@ -1,18 +1,18 @@
-# Lawrence Velasco | Software Solutions Developer, Problem Solver & AI Specialist
+# Lawrence Velasco | AI Operations Manager & Software Delivery
 
-<img src="assets/lawrence-velasco-portrait-512.webp" alt="Lawrence Velasco, software solutions developer and AI specialist" width="180" align="right">
+<img src="assets/lawrence-velasco-portrait-512.webp" alt="Lawrence Velasco, AI Operations Manager and software delivery leader" width="180" align="right">
 
-This is the official source repository for [lawrencevelasco.com](https://lawrencevelasco.com/), the professional portfolio of **Lawrence Velasco**, a Philippines-based software solutions developer, problem solver, and AI specialist.
+This is the official source repository for [lawrencevelasco.com](https://lawrencevelasco.com/), the professional portfolio of **Lawrence Velasco**, a Philippines-based AI Operations Manager and software delivery leader.
 
-Lawrence turns complex ideas and delivery problems into practical software products. His work spans product discovery, software architecture, mobile and web development, project delivery, and the responsible use of AI in larger engineering projects.
+Lawrence leads practical AI adoption, workflow automation and AI-assisted software delivery across development, quality assurance, documentation and internal operations. He continues to manage selected clients and build software, connecting technical decisions with project needs and delivery priorities.
 
-[Official website](https://lawrencevelasco.com/) · [Email](mailto:me@lawrencevelasco.com) · [LinkedIn](https://www.linkedin.com/in/iamlawrencev/) · [GitHub](https://github.com/iamlawrencev) · [App Store](https://apps.apple.com/us/developer/lawrence-velasco/id1447757334) · [Google Play](https://play.google.com/store/apps/developer?id=Lawrence+Velasco)
+[Official website](https://lawrencevelasco.com/) · [Email](mailto:me@lawrencevelasco.com) · [LinkedIn](https://www.linkedin.com/in/iamlawrencev/) · [JobStreet](https://ph.jobstreet.com/profiles/lawrence-velasco-fwvxbtzc7h) · [GitHub](https://github.com/iamlawrencev) · [App Store](https://apps.apple.com/us/developer/lawrence-velasco/id1447757334) · [Google Play](https://play.google.com/store/apps/developer?id=Lawrence+Velasco)
 
 ## Who is Lawrence Velasco?
 
-Lawrence Velasco is a software solutions developer and AI specialist based in the Philippines. He has worked in software development since 2016 and combines hands-on engineering with responsibility for scope, priorities, technical decisions, timelines, and delivery. His focus is not limited to one platform: he identifies the underlying problem, chooses an appropriate solution, and helps turn it into a maintainable product.
+Lawrence Velasco is an AI Operations Manager and software delivery leader based in the Philippines, with 10+ years of experience in software development, client management and project coordination. He has been AI Operations Manager at 1902 Software Development Corporation since September 2026, following roles in project coordination and mobile application development.
 
-His areas of experience include React Native, Expo, .NET MAUI, Xamarin, native iOS and Android development, TypeScript, C#, .NET, Supabase, web and backend systems, connected devices, project delivery, and AI-assisted development.
+His priority skills are Artificial Intelligence (AI), Workflow Automation, Software Project Management, Business Process Improvement and Technical Leadership. His engineering experience includes React Native, Expo, .NET MAUI, Xamarin, native iOS and Android development, TypeScript, C#, .NET, Supabase, web and backend systems, connected devices, and AI-assisted development.
 
 ## What has Lawrence Velasco built?
 

@@ -1,12 +1,12 @@
 # Lawrence Velasco
 
-> Software solutions developer and AI specialist building practical mobile, web, backend, and AI-assisted products.
+> AI Operations Manager and software delivery leader focused on practical AI adoption, workflow automation and hands-on engineering.
 
-Lawrence's work covers software solutions and product delivery, mobile apps for iOS and Android, web and backend systems, AI-assisted development, connected devices, and project leadership through release.
+Lawrence has 10+ years of experience in software development, client management and project coordination. He leads practical AI adoption across development, quality assurance, project management, documentation and internal operations at 1902 Software Development Corporation. His hands-on background includes React Native, .NET MAUI, Xamarin, iOS, Android, web and backend systems, and connected devices.
 
 ## Pages
 
-- [Official portfolio](https://lawrencevelasco.com/): Overview of Lawrence's software, AI, mobile, web, and delivery work.
+- [Official portfolio](https://lawrencevelasco.com/): Overview of Lawrence's AI operations, workflow automation, software delivery, career history and engineering work.
 - [AI-enabled software delivery](https://lawrencevelasco.com/ai-enabled-software-delivery/): Approach to bounded tasks, durable context, automated checks, and human review.
 - [San Bidet](https://lawrencevelasco.com/projects/san-bidet/): Independently shipped restroom and bidet finder for the Philippines.
 - [AniVoice](https://lawrencevelasco.com/projects/anivoice/): Independently shipped app for discovering anime characters and voice actors.
@@ -16,3 +16,4 @@ Lawrence's work covers software solutions and product delivery, mobile apps for 
 
 - [LinkedIn](https://www.linkedin.com/in/iamlawrencev/): Professional profile.
 - [GitHub](https://github.com/iamlawrencev): Code and project profile.
+- [JobStreet](https://ph.jobstreet.com/profiles/lawrence-velasco-fwvxbtzc7h): Professional profile.
