@@ -35,15 +35,50 @@ def b64url(data):
     return base64.urlsafe_b64encode(data).rstrip(b"=")
 
 
-def access_token():
-    from cryptography.hazmat.primitives import hashes, serialization
-    from cryptography.hazmat.primitives.asymmetric import padding
-
+def load_service_account():
+    """Key file from the session hook, or decode $GSC_SA_KEY_B64 directly."""
     path = key_path()
-    if not os.path.exists(path):
-        sys.exit(f"No Search Console key at {path}. Is GSC_SA_KEY_B64 set and did the session hook run?")
-    with open(path) as f:
-        sa = json.load(f)
+    if os.path.exists(path):
+        with open(path) as f:
+            return json.load(f)
+    b64 = os.environ.get("GSC_SA_KEY_B64")
+    if not b64:
+        sys.exit(f"No Search Console key: {path} is missing and GSC_SA_KEY_B64 is not set.")
+    try:
+        sa = json.loads(base64.b64decode(b64))
+    except Exception:
+        sys.exit("GSC_SA_KEY_B64 could not be decoded as a service-account JSON.")
+    os.makedirs(os.path.dirname(path), mode=0o700, exist_ok=True)
+    fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+    with os.fdopen(fd, "w") as f:
+        json.dump(sa, f)
+    return sa
+
+
+def rs256(signing_input, private_key_pem):
+    """Sign with the cryptography package, falling back to the openssl CLI."""
+    try:
+        from cryptography.hazmat.primitives import hashes, serialization
+        from cryptography.hazmat.primitives.asymmetric import padding
+        key = serialization.load_pem_private_key(private_key_pem.encode(), password=None)
+        return key.sign(signing_input, padding.PKCS1v15(), hashes.SHA256())
+    except Exception:
+        import subprocess
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            kf = os.path.join(d, "k.pem")
+            fd = os.open(kf, os.O_WRONLY | os.O_CREAT, 0o600)
+            with os.fdopen(fd, "w") as f:
+                f.write(private_key_pem)
+            r = subprocess.run(["openssl", "dgst", "-sha256", "-sign", kf],
+                               input=signing_input, capture_output=True)
+        if r.returncode != 0:
+            sys.exit("Signing failed: neither the cryptography package nor openssl worked.")
+        return r.stdout
+
+
+def access_token():
+    sa = load_service_account()
     now = int(time.time())
     header = b64url(json.dumps({"alg": "RS256", "typ": "JWT"}).encode())
     claims = b64url(json.dumps({
@@ -51,8 +86,7 @@ def access_token():
         "iat": now, "exp": now + 3600,
     }).encode())
     signing_input = header + b"." + claims
-    key = serialization.load_pem_private_key(sa["private_key"].encode(), password=None)
-    sig = b64url(key.sign(signing_input, padding.PKCS1v15(), hashes.SHA256()))
+    sig = b64url(rs256(signing_input, sa["private_key"]))
     body = urllib.parse.urlencode({
         "grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
         "assertion": (signing_input + b"." + sig).decode(),
