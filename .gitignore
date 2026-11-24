@@ -45,3 +45,6 @@ dist/
 build/
 coverage/
 .cache/
+
+# Search Console service-account key (written outside the repo by the session hook)
+gsc-key.json
