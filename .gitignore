@@ -48,3 +48,4 @@ coverage/
 
 # Search Console service-account key (written outside the repo by the session hook)
 gsc-key.json
+__pycache__/
