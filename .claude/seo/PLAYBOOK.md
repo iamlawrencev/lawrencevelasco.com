@@ -6,8 +6,8 @@ The owner has authorised these runs to commit and push to `main` without asking.
 ## Each run
 
 1. Run `python3 .claude/seo/gsc_report.py` (plain system Python; it decodes
-   `$GSC_SA_KEY_B64` itself if the hook didn't run, and falls back to the
-   `openssl` CLI if the `cryptography` package is broken — no venv or pip
+   `$GSC_SA_KEY_B64` itself if the hook didn't run, and signs with the
+   `openssl` CLI so a broken `cryptography` package doesn't matter — no venv or pip
    needed). If it still fails, say so in the summary and stop. Never print the key file,
    `$GSC_SA_KEY_B64`, or an access token.
 2. Read the report. Trends come from Search Console itself: the current vs

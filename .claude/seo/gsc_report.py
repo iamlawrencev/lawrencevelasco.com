@@ -56,15 +56,12 @@ def load_service_account():
 
 
 def rs256(signing_input, private_key_pem):
-    """Sign with the cryptography package, falling back to the openssl CLI."""
-    try:
-        from cryptography.hazmat.primitives import hashes, serialization
-        from cryptography.hazmat.primitives.asymmetric import padding
-        key = serialization.load_pem_private_key(private_key_pem.encode(), password=None)
-        return key.sign(signing_input, padding.PKCS1v15(), hashes.SHA256())
-    except Exception:
-        import subprocess
-        import tempfile
+    """Sign with the openssl CLI; the cryptography package is only a fallback,
+    because in some containers it is broken and panics (BaseException) on import."""
+    import shutil
+    import subprocess
+    import tempfile
+    if shutil.which("openssl"):
         with tempfile.TemporaryDirectory() as d:
             kf = os.path.join(d, "k.pem")
             fd = os.open(kf, os.O_WRONLY | os.O_CREAT, 0o600)
@@ -72,9 +69,17 @@ def rs256(signing_input, private_key_pem):
                 f.write(private_key_pem)
             r = subprocess.run(["openssl", "dgst", "-sha256", "-sign", kf],
                                input=signing_input, capture_output=True)
-        if r.returncode != 0:
-            sys.exit("Signing failed: neither the cryptography package nor openssl worked.")
-        return r.stdout
+        if r.returncode == 0 and r.stdout:
+            return r.stdout
+    try:
+        from cryptography.hazmat.primitives import hashes, serialization
+        from cryptography.hazmat.primitives.asymmetric import padding
+        key = serialization.load_pem_private_key(private_key_pem.encode(), password=None)
+        return key.sign(signing_input, padding.PKCS1v15(), hashes.SHA256())
+    except (KeyboardInterrupt, SystemExit):
+        raise
+    except BaseException:
+        sys.exit("Signing failed: openssl did not work and the cryptography package is unusable.")
 
 
 def access_token():
